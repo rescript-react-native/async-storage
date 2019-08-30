@@ -31,8 +31,6 @@
   },
   "devDependencies": {
     "bs-platform": "^5.0.4",
-    "reason-react": "^0.7.0",
-    "reason-react-native": "^0.60.0",
     "@react-native-community/async-storage": "^1.6.1"
   },
   "peerDependencies": {
