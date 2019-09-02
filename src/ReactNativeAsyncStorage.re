@@ -35,3 +35,14 @@ external multiRemove: array(string) => Js.Promise.t(unit) = "multiRemove";
 
 [@bs.scope "default"] [@bs.module "@react-native-community/async-storage"]
 external flushGetRequests: unit => unit = "flushGetRequests";
+
+type asyncStorageState = {
+  .
+  [@bs.meth] "getItem": unit => Js.Promise.t(Js.Null.t(string)),
+  [@bs.meth] "setItem": string => Js.Promise.t(unit),
+  [@bs.meth] "mergeItem": string => Js.Promise.t(unit),
+  [@bs.meth] "removeItem": unit => Js.Promise.t(unit),
+};
+
+[@bs.module "@react-native-community/async-storage"]
+external useAsyncStorage: string => asyncStorageState = "useAsyncStorage";
