@@ -16,7 +16,7 @@ Exposed as `ReactNativeAsyncStorage` module.
 ## Installation
 
 When
-[`@react-native-community/async-storage`](`https://github.com/react-native-community/async-storage`)
+[`@react-native-community/async-storage`](https://github.com/react-native-community/async-storage)
 is properly installed & configured by following their installation instructions,
 you can install the bindings:
 
