@@ -48,7 +48,7 @@ your `bsconfig.json`. Something like
 
 #### `ReactNativeAsyncStorage.asyncStorageState`
 
-```re
+```reason
 {
   .
   [@bs.meth] "getItem": unit => Js.Promise.t(Js.Null.t(string)),
@@ -62,73 +62,73 @@ your `bsconfig.json`. Something like
 
 #### `ReactNativeAsyncStorage.getItem`
 
-```re
+```reason
 string => Js.Promise.t(Js.Null.t(string))
 ```
 
 #### `ReactNativeAsyncStorage.setItem`
 
-```re
+```reason
 (string, string) => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.removeItem`
 
-```re
+```reason
 string => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.mergeItem`
 
-```re
+```reason
 (string, string) => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.clear`
 
-```re
+```reason
 unit => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.getAllKeys`
 
-```re
+```reason
 unit => Js.Promise.t(Js.Null.t(array(string)))
 ```
 
 #### `ReactNativeAsyncStorage.multiGet`
 
-```re
+```reason
 array(string) => Js.Promise.t(array((string, Js.Null.t(string))))
 ```
 
 #### `ReactNativeAsyncStorage.multiSet`
 
-```re
+```reason
 array((string, string)) => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.multiMerge`
 
-```re
+```reason
 array((string, string)) => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.multiRemove`
 
-```re
+```reason
 array(string) => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.flushGetRequests`
 
-```re
+```reason
 unit => unit
 ```
 
 #### `ReactNativeAsyncStorage.useAsyncStorage`
 
-```re
+```reason
 string => asyncStorageState
 ```
 
