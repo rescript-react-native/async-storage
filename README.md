@@ -5,17 +5,17 @@
 [![Chat](https://img.shields.io/discord/235176658175262720.svg?logo=discord&colorb=blue)](https://reason-react-native.github.io/discord/)
 
 [ReScript](https://rescript-lang.org) / [Reason](https://reasonml.github.io) bindings for
-[`@react-native-community/async-storage`](https://github.com/react-native-community/async-storage).
+[`@react-native-async-storage/async-storage`](https://github.com/react-native-async-storage/async-storage).
 
 Exposed as `ReactNativeAsyncStorage` module.
 
 `@reason-react-native/async-storage` X.y.\* means it's compatible with
-`@react-native-community/async-storage` X.y.\*
+`@react-native-async-storage/async-storage` X.y.\*
 
 ## Installation
 
 When
-[`@react-native-community/async-storage`](https://github.com/react-native-community/async-storage)
+[`@react-native-async-storage/async-storage`](https://github.com/react-native-async-storage/async-storage)
 is properly installed & configured by following their installation instructions,
 you can install the bindings:
 
