@@ -10,6 +10,7 @@
   "repository": "https://github.com/reason-react-native/async-storage.git",
   "license": "MIT",
   "keywords": [
+    "rescript",
     "reason",
     "reasonml",
     "bucklescript",
