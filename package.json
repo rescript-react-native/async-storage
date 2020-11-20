@@ -1,6 +1,6 @@
 {
   "name": "@reason-react-native/async-storage",
-  "description": "ReScript bindings for @react-native-async-storage/async-storage",
+  "description": "ReScript bindings for @react-native-async-storage/async-storage.",
   "version": "1.6.1",
   "publishConfig": {
     "access": "public"
