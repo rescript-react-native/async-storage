@@ -56,8 +56,8 @@ type asyncStorageState = {
 };
 
 
- let ReactAsyncStorage.{getItem, setItem} =
-    ReactAsyncStorage.useAsyncStorage2("useAsyncStorage");
+ let ReactNativeAsyncStorage.{getItem, setItem} =
+    ReactNativeAsyncStorage.useAsyncStorage("useAsyncStorage");
 ```
 
 ### Methods
@@ -231,8 +231,8 @@ let app = () => {
   </TouchableWithoutFeedback>;
 };
 ```
----
 
+---
 
 ## Changelog
 
