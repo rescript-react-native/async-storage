@@ -48,13 +48,16 @@ your `bsconfig.json`:
 #### `ReactNativeAsyncStorage.asyncStorageState`
 
 ```reason
-{
-  .
-  [@bs.meth] "getItem": unit => Js.Promise.t(Js.Null.t(string)),
-  [@bs.meth] "setItem": string => Js.Promise.t(unit),
-  [@bs.meth] "mergeItem": string => Js.Promise.t(unit),
-  [@bs.meth] "removeItem": unit => Js.Promise.t(unit),
-}
+type asyncStorageState = {
+  getItem: unit => Js.Promise.t(Js.Null.t(string)),
+  setItem: string => Js.Promise.t(unit),
+  mergeItem: string => Js.Promise.t(unit),
+  removeItem: unit => Js.Promise.t(unit),
+};
+
+
+ let ReactAsyncStorage.{getItem, setItem} =
+    ReactAsyncStorage.useAsyncStorage2("useAsyncStorage");
 ```
 
 ### Methods
@@ -131,7 +134,105 @@ unit => unit
 string => asyncStorageState
 ```
 
+## Example
+
+```reason
+open ReactNative;
+
+let styles =
+  Style.(
+    StyleSheet.create({
+      "container":
+        style(
+          ~flex=1.,
+          ~justifyContent=`center,
+          ~alignItems=`center,
+          ~backgroundColor="#F5FCFF",
+          (),
+        ),
+      "content":
+        viewStyle(
+          ~flex=1.0,
+          ~justifyContent=`center,
+          ~alignItems=`center,
+          ~marginHorizontal=40.0->dp,
+          (),
+        ),
+      "button":
+        viewStyle(
+          ~borderWidth=1.0,
+          ~borderColor="#1EA1F3",
+          ~borderRadius=20.0,
+          ~paddingHorizontal=20.0->dp,
+          ~paddingVertical=10.0->dp,
+          ~width=100.0->pct,
+          ~alignItems=`center,
+          ~justifyContent=`center,
+          ~marginTop=20.0->dp,
+          ~height=42.0->dp,
+          (),
+        ),
+      "buttonText": textStyle(~fontWeight=`bold, ~color="#1EA1F3", ()),
+      "colorful": style(~backgroundColor="#1EA1F3", ~color="#fff", ()),
+    })
+  );
+
+let key = "@@KEY";
+
+
+[@react.component]
+let app = () => {
+  let (value, setValue) = React.useState(() => "");
+  let ReactNativeAsyncStorage.{getItem, setItem} =
+    ReactNativeAsyncStorage.useAsyncStorage("@@KEY");
+
+  let getItem = () => useAsyncStorage##getItem();
+
+  let readItemFromStorage = () => {
+    getItem()
+    |> Js.Promise.then_(newValue => {
+         switch (Js.Null.toOption(newValue)) {
+         | None =>
+           setValue(_ => BsFaker.Name.title());
+           Js.Promise.resolve();
+         | Some(newValue) =>
+           setValue(_ => newValue);
+           Js.Promise.resolve();
+         }
+       });
+  };
+  let writeItemToStorage = newValue => {
+    setItem(newValue)
+    |> Js.Promise.then_(_ => {
+         setValue(_ => newValue);
+         Js.Promise.resolve();
+       });
+  };
+
+  React.useEffect0(() => {
+    readItemFromStorage()->ignore;
+
+    None;
+  });
+  <TouchableWithoutFeedback onPress={_ => Keyboard.dismiss()}>
+    <KeyboardAvoidingView behavior=`padding style=styles##content>
+        <TouchableOpacity
+          style={StyleSheet.flatten([|styles##button, styles##colorful|])}
+          onPress={_ => {writeItemToStorage(BsFaker.Name.title())->ignore}}>
+          <Text
+            style={StyleSheet.flatten([|
+              styles##buttonText,
+              styles##colorful,
+            |])}>
+            {React.string("Current title: " ++ value)}
+          </Text>
+        </TouchableOpacity>
+      </KeyboardAvoidingView>
+  </TouchableWithoutFeedback>;
+};
+```
 ---
+
 
 ## Changelog
 
