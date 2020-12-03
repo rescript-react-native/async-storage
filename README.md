@@ -186,8 +186,6 @@ let app = () => {
   let ReactNativeAsyncStorage.{getItem, setItem} =
     ReactNativeAsyncStorage.useAsyncStorage("@@KEY");
 
-  let getItem = () => useAsyncStorage##getItem();
-
   let readItemFromStorage = () => {
     getItem()
     |> Js.Promise.then_(newValue => {
