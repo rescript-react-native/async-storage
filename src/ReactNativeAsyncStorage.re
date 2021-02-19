@@ -37,6 +37,19 @@ external multiRemove: array(string) => Js.Promise.t(unit) = "multiRemove";
 external flushGetRequests: unit => unit = "flushGetRequests";
 
 type asyncStorageState = {
+  .
+  [@bs.meth] "getItem": unit => Js.Promise.t(Js.Null.t(string)),
+  [@bs.meth] "setItem": string => Js.Promise.t(unit),
+  [@bs.meth] "mergeItem": string => Js.Promise.t(unit),
+  [@bs.meth] "removeItem": unit => Js.Promise.t(unit),
+};
+
+[@deprecated
+  "Please use `useAsyncStorage_` instead of `useAsyncStorage` to use record syntax. In next major release, `useAsyncStorage_` will become `useAsyncStorage`."
+]
+[@bs.module "@react-native-async-storage/async-storage"]
+external useAsyncStorage: string => asyncStorageState = "useAsyncStorage";
+type asyncStorageStateAlt = {
   getItem: unit => Js.Promise.t(Js.Null.t(string)),
   setItem: string => Js.Promise.t(unit),
   mergeItem: string => Js.Promise.t(unit),
@@ -44,4 +57,4 @@ type asyncStorageState = {
 };
 
 [@bs.module "@react-native-async-storage/async-storage"]
-external useAsyncStorage: string => asyncStorageState = "useAsyncStorage";
+external useAsyncStorage_: string => asyncStorageState = "useAsyncStorage";
