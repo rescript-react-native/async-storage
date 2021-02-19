@@ -48,13 +48,16 @@ your `bsconfig.json`:
 #### `ReactNativeAsyncStorage.asyncStorageState`
 
 ```reason
-{
-  .
-  [@bs.meth] "getItem": unit => Js.Promise.t(Js.Null.t(string)),
-  [@bs.meth] "setItem": string => Js.Promise.t(unit),
-  [@bs.meth] "mergeItem": string => Js.Promise.t(unit),
-  [@bs.meth] "removeItem": unit => Js.Promise.t(unit),
-}
+type asyncStorageState = {
+  getItem: unit => Js.Promise.t(Js.Null.t(string)),
+  setItem: string => Js.Promise.t(unit),
+  mergeItem: string => Js.Promise.t(unit),
+  removeItem: unit => Js.Promise.t(unit),
+};
+
+
+ let ReactNativeAsyncStorage.{getItem, setItem} =
+    ReactNativeAsyncStorage.useAsyncStorage("useAsyncStorage");
 ```
 
 ### Methods
