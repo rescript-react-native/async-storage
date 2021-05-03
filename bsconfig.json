@@ -1,9 +1,6 @@
 {
-  "name": "@reason-react-native/async-storage",
-  "refmt": 3,
-  "reason": {
-    "react-jsx": 3
-  },
+  "name": "@rescript-react-native/async-storage",
+  "reason": { "react-jsx": 3 },
   "package-specs": {
     "module": "commonjs",
     "in-source": true

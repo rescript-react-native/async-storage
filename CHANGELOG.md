@@ -1,4 +1,4 @@
-# Changelog of `@reason-react-native/async-storage`
+# Changelog of `@rescript-react-native/async-storage`
 
 ## 1.6.2 - 2021-20-19
 

@@ -1,15 +1,15 @@
-# `@reason-react-native/async-storage`
+# `@rescript-react-native/async-storage`
 
-[![Build Status](https://github.com/reason-react-native/async-storage/workflows/Build/badge.svg)](https://github.com/reason-react-native/async-storage/actions)
-[![Version](https://img.shields.io/npm/v/@reason-react-native/async-storage.svg)](https://www.npmjs.com/@reason-react-native/async-storage)
-[![Chat](https://img.shields.io/discord/235176658175262720.svg?logo=discord&colorb=blue)](https://reason-react-native.github.io/discord/)
+[![Build Status](https://github.com/rescript-react-native/async-storage/workflows/Build/badge.svg)](https://github.com/rescript-react-native/async-storage/actions)
+[![Version](https://img.shields.io/npm/v/@rescript-react-native/async-storage.svg)](https://www.npmjs.com/@rescript-react-native/async-storage)
+[![ReScript Forum](https://img.shields.io/discourse/posts?color=e6484f&label=ReScript%20Forum&server=https%3A%2F%2Fforum.rescript-lang.org)](https://forum.rescript-lang.org/)
 
-[ReScript](https://rescript-lang.org) / [Reason](https://reasonml.github.io) bindings for
+[ReScript](https://rescript-lang.org) bindings for
 [`@react-native-async-storage/async-storage`](https://github.com/react-native-async-storage/async-storage).
 
 Exposed as `ReactNativeAsyncStorage` module.
 
-`@reason-react-native/async-storage` X.y.\* means it's compatible with
+`@rescript-react-native/async-storage` X.y.\* means it's compatible with
 `@react-native-async-storage/async-storage` X.y.\*
 
 ## Installation
@@ -20,22 +20,22 @@ is properly installed & configured by following their installation instructions,
 you can install the bindings:
 
 ```console
-npm install @reason-react-native/async-storage
+npm install @rescript-react-native/async-storage
 # or
-yarn add @reason-react-native/async-storage
+yarn add @rescript-react-native/async-storage
 ```
 
-`@reason-react-native/async-storage` should be added to `bs-dependencies` in
+`@rescript-react-native/async-storage` should be added to `bs-dependencies` in
 your `bsconfig.json`:
 
 ```diff
 {
   //...
   "bs-dependencies": [
-    "reason-react",
-    "reason-react-native",
+    "@rescript/react",
+    "rescript-react-native",
     // ...
-+    "@reason-react-native/async-storage"
++    "@rescript-react-native/async-storage"
   ],
   //...
 }
@@ -47,7 +47,7 @@ your `bsconfig.json`:
 
 #### `ReactNativeAsyncStorage.asyncStorageState`
 
-```reason
+```rescript
 type asyncStorageState = {
   getItem: unit => Js.Promise.t(Js.Null.t(string)),
   setItem: string => Js.Promise.t(unit),
@@ -64,73 +64,73 @@ type asyncStorageState = {
 
 #### `ReactNativeAsyncStorage.getItem`
 
-```reason
+```rescript
 string => Js.Promise.t(Js.Null.t(string))
 ```
 
 #### `ReactNativeAsyncStorage.setItem`
 
-```reason
+```rescript
 (string, string) => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.removeItem`
 
-```reason
+```rescript
 string => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.mergeItem`
 
-```reason
+```rescript
 (string, string) => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.clear`
 
-```reason
+```rescript
 unit => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.getAllKeys`
 
-```reason
+```rescript
 unit => Js.Promise.t(Js.Null.t(array(string)))
 ```
 
 #### `ReactNativeAsyncStorage.multiGet`
 
-```reason
+```rescript
 array(string) => Js.Promise.t(array((string, Js.Null.t(string))))
 ```
 
 #### `ReactNativeAsyncStorage.multiSet`
 
-```reason
+```rescript
 array((string, string)) => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.multiMerge`
 
-```reason
+```rescript
 array((string, string)) => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.multiRemove`
 
-```reason
+```rescript
 array(string) => Js.Promise.t(unit)
 ```
 
 #### `ReactNativeAsyncStorage.flushGetRequests`
 
-```reason
+```rescript
 unit => unit
 ```
 
 #### `ReactNativeAsyncStorage.useAsyncStorage`
 
-```reason
+```rescript
 string => asyncStorageState
 ```
 
@@ -146,11 +146,11 @@ releases.
 ## Contribute
 
 Read the
-[contribution guidelines](https://github.com/reason-react-native/.github/blob/master/CONTRIBUTING.md)
+[contribution guidelines](https://github.com/rescript-react-native/.github/blob/master/CONTRIBUTING.md)
 before contributing.
 
 ## Code of Conduct
 
 We want this community to be friendly and respectful to each other. Please read
-[our full code of conduct](https://github.com/reason-react-native/.github/blob/master/CODE_OF_CONDUCT.md)
+[our full code of conduct](https://github.com/rescript-react-native/.github/blob/master/CODE_OF_CONDUCT.md)
 so that you can understand what actions will and will not be tolerated.
