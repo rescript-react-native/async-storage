@@ -1,5 +1,9 @@
 # Changelog of `@rescript-react-native/async-storage`
 
+## 1.6.3 - 2021-05-03
+
+ReScript
+
 ## 1.6.2 - 2021-20-19
 
 Add `useAsyncStorage_` for record syntax & deprecated `useAsyncStorage`
