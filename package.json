@@ -12,6 +12,7 @@
     "react": "17.0.2"
   },
   "repository": "https://github.com/rescript-react-native/async-storage.git",
+  "funding": "https://github.com/rescript-react-native/rescript-react-native?sponsor=1",
   "license": "MIT",
   "keywords": [
     "rescript",
